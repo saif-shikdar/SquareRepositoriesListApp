@@ -13,12 +13,6 @@ protocol RepositoryService {
 }
 
 class Repository: RepositoryService {
-    let service: SquareRepoService
-    
-    init(squareRepoService: SquareRepoService = SquareRepoServiceImp()) {
-        self.service = squareRepoService
-    }
-    
     func fetchRepos<T: Decodable>(_ type: T.Type, completionHandler: @escaping (Result<RepositorySquare, APIError>) -> Void) {
         guard let url = URL(string: Endpoint.url) else {
             let error = APIError.badURL

@@ -12,7 +12,7 @@ struct RepositoryListView: View {
     
     var body: some View {
         VStack {
-            Text("My Repositories")
+            Text("Square Repositories")
                 .font(.title)
                 .padding(.bottom, 15)
             Spacer()

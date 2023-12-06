@@ -14,7 +14,6 @@
 		8A10D3CC2B2090100042E1AD /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3CB2B2090100042E1AD /* RepositoryViewModel.swift */; };
 		8A10D3CE2B2090A10042E1AD /* RepositorySquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3CD2B2090A10042E1AD /* RepositorySquare.swift */; };
 		8A10D3D12B2093000042E1AD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D02B2093000042E1AD /* Endpoint.swift */; };
-		8A10D3D32B2093560042E1AD /* SquareRepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D22B2093560042E1AD /* SquareRepoService.swift */; };
 		8A10D3D52B2093B10042E1AD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D42B2093B10042E1AD /* Repository.swift */; };
 		8A10D3D72B20A4670042E1AD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D62B20A4670042E1AD /* APIError.swift */; };
 		8A10D3D92B20AB960042E1AD /* RepositoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D82B20AB960042E1AD /* RepositoryCardView.swift */; };
@@ -41,7 +40,6 @@
 		8A10D3CB2B2090100042E1AD /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		8A10D3CD2B2090A10042E1AD /* RepositorySquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySquare.swift; sourceTree = "<group>"; };
 		8A10D3D02B2093000042E1AD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		8A10D3D22B2093560042E1AD /* SquareRepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareRepoService.swift; sourceTree = "<group>"; };
 		8A10D3D42B2093B10042E1AD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		8A10D3D62B20A4670042E1AD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		8A10D3D82B20AB960042E1AD /* RepositoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCardView.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				8A10D3D02B2093000042E1AD /* Endpoint.swift */,
-				8A10D3D22B2093560042E1AD /* SquareRepoService.swift */,
 				8A10D3D42B2093B10042E1AD /* Repository.swift */,
 				8A10D3D62B20A4670042E1AD /* APIError.swift */,
 			);
@@ -256,7 +253,6 @@
 				8A10D3BC2B208F660042E1AD /* RepositoryListView.swift in Sources */,
 				8A10D3D92B20AB960042E1AD /* RepositoryCardView.swift in Sources */,
 				8A10D3BA2B208F660042E1AD /* GitHubRepositoriesApp.swift in Sources */,
-				8A10D3D32B2093560042E1AD /* SquareRepoService.swift in Sources */,
 				8A10D3CE2B2090A10042E1AD /* RepositorySquare.swift in Sources */,
 				8A10D3D72B20A4670042E1AD /* APIError.swift in Sources */,
 				8A10D3CC2B2090100042E1AD /* RepositoryViewModel.swift in Sources */,
