@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A041D432B45938F00694552 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A041D422B45938F00694552 /* MockNetworkManager.swift */; };
+		8A041D452B45BD1F00694552 /* SquareRepositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A041D442B45BD1F00694552 /* SquareRepositories.json */; };
 		8A10D3BA2B208F660042E1AD /* GitHubRepositoriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3B92B208F660042E1AD /* GitHubRepositoriesApp.swift */; };
 		8A10D3BC2B208F660042E1AD /* RepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3BB2B208F660042E1AD /* RepositoryListView.swift */; };
 		8A10D3BE2B208F670042E1AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A10D3BD2B208F670042E1AD /* Assets.xcassets */; };
@@ -14,7 +16,7 @@
 		8A10D3CC2B2090100042E1AD /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3CB2B2090100042E1AD /* RepositoryViewModel.swift */; };
 		8A10D3CE2B2090A10042E1AD /* RepositorySquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3CD2B2090A10042E1AD /* RepositorySquare.swift */; };
 		8A10D3D12B2093000042E1AD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D02B2093000042E1AD /* Endpoint.swift */; };
-		8A10D3D52B2093B10042E1AD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D42B2093B10042E1AD /* Repository.swift */; };
+		8A10D3D52B2093B10042E1AD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D42B2093B10042E1AD /* NetworkManager.swift */; };
 		8A10D3D72B20A4670042E1AD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D62B20A4670042E1AD /* APIError.swift */; };
 		8A10D3D92B20AB960042E1AD /* RepositoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3D82B20AB960042E1AD /* RepositoryCardView.swift */; };
 		8A10D3E12B20C2100042E1AD /* GitHubRepositoriesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10D3E02B20C2100042E1AD /* GitHubRepositoriesAppTests.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A041D422B45938F00694552 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		8A041D442B45BD1F00694552 /* SquareRepositories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SquareRepositories.json; sourceTree = "<group>"; };
 		8A10D3B62B208F660042E1AD /* GitHubRepositoriesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubRepositoriesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A10D3B92B208F660042E1AD /* GitHubRepositoriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoriesApp.swift; sourceTree = "<group>"; };
 		8A10D3BB2B208F660042E1AD /* RepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListView.swift; sourceTree = "<group>"; };
@@ -40,7 +44,7 @@
 		8A10D3CB2B2090100042E1AD /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		8A10D3CD2B2090A10042E1AD /* RepositorySquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySquare.swift; sourceTree = "<group>"; };
 		8A10D3D02B2093000042E1AD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		8A10D3D42B2093B10042E1AD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		8A10D3D42B2093B10042E1AD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8A10D3D62B20A4670042E1AD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		8A10D3D82B20AB960042E1AD /* RepositoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCardView.swift; sourceTree = "<group>"; };
 		8A10D3DE2B20C2100042E1AD /* GitHubRepositoriesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubRepositoriesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8A10D3D02B2093000042E1AD /* Endpoint.swift */,
-				8A10D3D42B2093B10042E1AD /* Repository.swift */,
+				8A10D3D42B2093B10042E1AD /* NetworkManager.swift */,
 				8A10D3D62B20A4670042E1AD /* APIError.swift */,
 			);
 			path = Network;
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				8A10D3E02B20C2100042E1AD /* GitHubRepositoriesAppTests.swift */,
+				8A041D422B45938F00694552 /* MockNetworkManager.swift */,
+				8A041D442B45BD1F00694552 /* SquareRepositories.json */,
 			);
 			path = GitHubRepositoriesAppTests;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A041D452B45BD1F00694552 /* SquareRepositories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A10D3D52B2093B10042E1AD /* Repository.swift in Sources */,
+				8A10D3D52B2093B10042E1AD /* NetworkManager.swift in Sources */,
 				8A10D3BC2B208F660042E1AD /* RepositoryListView.swift in Sources */,
 				8A10D3D92B20AB960042E1AD /* RepositoryCardView.swift in Sources */,
 				8A10D3BA2B208F660042E1AD /* GitHubRepositoriesApp.swift in Sources */,
@@ -264,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A041D432B45938F00694552 /* MockNetworkManager.swift in Sources */,
 				8A10D3E12B20C2100042E1AD /* GitHubRepositoriesAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  Repository.swift
+//  NetworkManager.swift
 //  GitHubRepositoriesApp
 //
 //  Created by Saif Shikdar on 06/12/2023.
@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol RepositoryService {
+protocol NetworkService {
     func fetchRepos<T: Decodable>(_ type: T.Type, completionHandler: @escaping (Result<RepositorySquare, APIError>) -> Void)
 }
 
-class Repository: RepositoryService {
+class NetworkManager: NetworkService {
     func fetchRepos<T: Decodable>(_ type: T.Type, completionHandler: @escaping (Result<RepositorySquare, APIError>) -> Void) {
         guard let url = URL(string: Endpoint.url) else {
             let error = APIError.badURL

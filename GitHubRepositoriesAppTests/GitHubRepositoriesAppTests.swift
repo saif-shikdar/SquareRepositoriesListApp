@@ -15,8 +15,7 @@ final class GitHubRepositoriesAppTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let mockRepository: RepositoryService = Repository()
-        viewModel = RepositoryViewModel(repository: mockRepository)
+        viewModel = RepositoryViewModel(network: MockNetworkManager())
     }
 
     override func setUpWithError() throws {
@@ -34,7 +33,7 @@ final class GitHubRepositoriesAppTests: XCTestCase {
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
         let expectation = self.expectation(description: "Fetch square repository list")
-        viewModel?.repository.fetchRepos(RepositorySquare.self) { result in
+        viewModel?.networkService.fetchRepos(RepositorySquare.self) { result in
             switch result {
                 case .success(let repo):
                     // Assert the properties of the movie object you expect to receive

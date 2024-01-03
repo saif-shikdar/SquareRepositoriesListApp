@@ -14,15 +14,15 @@ protocol RepositoryViewModelling {
 
 class RepositoryViewModel: ObservableObject {
     var subscriptions: Set<AnyCancellable> = []
-    let repository: RepositoryService
+    let networkService: NetworkService
     
     @Published var repoList: RepositorySquare?
     
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     
-    init(repository: RepositoryService = Repository()) {
-        self.repository = repository
+    init(network: NetworkService = NetworkManager()) {
+        self.networkService = network
         getRepoList()
     }
 }
@@ -30,7 +30,7 @@ class RepositoryViewModel: ObservableObject {
 extension RepositoryViewModel: RepositoryViewModelling {
     func getRepoList() {
         isLoading = true
-        repository.fetchRepos(RepositorySquare.self) { result in
+        networkService.fetchRepos(RepositorySquare.self) { result in
             DispatchQueue.main.async {
                 self.isLoading = false
                 switch result {
@@ -43,5 +43,12 @@ extension RepositoryViewModel: RepositoryViewModelling {
             }
         }
     }
+}
+
+enum direction {
+    case East(String)
+    case North(String)
+    case West(String)
+    case South(String)
 }
 
