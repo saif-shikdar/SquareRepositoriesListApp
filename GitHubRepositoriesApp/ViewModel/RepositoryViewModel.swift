@@ -6,14 +6,12 @@
 //
 
 import Foundation
-import Combine
 
 protocol RepositoryViewModelling {
     func getRepoList()
 }
 
 class RepositoryViewModel: ObservableObject {
-    var subscriptions: Set<AnyCancellable> = []
     let networkService: NetworkService
     
     @Published var repoList: RepositorySquare?
@@ -23,32 +21,27 @@ class RepositoryViewModel: ObservableObject {
     
     init(network: NetworkService = NetworkManager()) {
         self.networkService = network
-        getRepoList()
     }
 }
 
 extension RepositoryViewModel: RepositoryViewModelling {
+    
     func getRepoList() {
-        isLoading = true
-        networkService.fetchRepos(RepositorySquare.self) { result in
-            DispatchQueue.main.async {
-                self.isLoading = false
-                switch result {
-                case .success(let repoList):
-                    self.repoList = repoList
-                case .failure(let error):
-                    self.errorMessage = error.localizedDescription
-                    print(error)
+        DispatchQueue.main.async {
+            self.isLoading = true
+            self.networkService.fetchRepos(RepositorySquare.self) { result in
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    switch result {
+                    case .success(let repoList):
+                        self.repoList = repoList
+                    case .failure(let error):
+                        self.errorMessage = error.localizedDescription
+                        print(error)
+                    }
                 }
             }
         }
     }
-}
-
-enum direction {
-    case East(String)
-    case North(String)
-    case West(String)
-    case South(String)
 }
 

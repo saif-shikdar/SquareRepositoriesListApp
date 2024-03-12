@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct RepositoryListView: View {
-    @ObservedObject var viewModel: RepositoryViewModel
+    @StateObject var viewModel: RepositoryViewModel = RepositoryViewModel(network: 
+        NetworkManager(urlSession: URLSession.shared))
     
     var body: some View {
         VStack {
@@ -33,9 +34,12 @@ struct RepositoryListView: View {
             Spacer()
         }
         .padding()
+        .task {
+            await viewModel.getRepoList()
+        }
     }
 }
 
 #Preview {
-    RepositoryListView(viewModel: RepositoryViewModel())
+    RepositoryListView()
 }

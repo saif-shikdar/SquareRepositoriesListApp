@@ -12,7 +12,15 @@ protocol NetworkService {
     func fetchRepos<T: Decodable>(_ type: T.Type, completionHandler: @escaping (Result<RepositorySquare, APIError>) -> Void)
 }
 
-class NetworkManager: NetworkService {
+class NetworkManager {
+    let urlSession: URLSession
+    
+    init(urlSession: URLSession = URLSession.shared) {
+        self.urlSession = urlSession
+    }
+}
+
+extension NetworkManager: NetworkService {
     func fetchRepos<T: Decodable>(_ type: T.Type, completionHandler: @escaping (Result<RepositorySquare, APIError>) -> Void) {
         guard let url = URL(string: Endpoint.url) else {
             let error = APIError.badURL
@@ -28,7 +36,9 @@ class NetworkManager: NetworkService {
                 completionHandler(Result.failure(APIError.badResponse(statusCode: response.statusCode)))
             } else if let data = data {
                 do {
-                    let repoList = try JSONDecoder().decode(RepositorySquare.self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let repoList = try decoder.decode(RepositorySquare.self, from: data)
                     completionHandler(Result.success(repoList))
                 } catch {
                     completionHandler(Result.failure(APIError.parsing(error as? DecodingError)))
