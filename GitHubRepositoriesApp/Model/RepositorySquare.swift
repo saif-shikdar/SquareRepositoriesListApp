@@ -1,12 +1,3 @@
-//
-//  RepositorySquare.swift
-//  GitHubRepositoriesApp
-//
-//  Created by Saif Shikdar on 06/12/2023.
-//
-
-import Foundation
-
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
@@ -43,7 +34,7 @@ struct RepositorySquareElement: Codable {
     let issuesURL, pullsURL, milestonesURL, notificationsURL: String?
     let labelsURL, releasesURL: String?
     let deploymentsURL: String?
-    let createdAt, updatedAt, pushedAt: String?
+    let createdAt, updatedAt, pushedAt: Date?
     let gitURL, sshURL: String?
     let cloneURL: String?
     let svnURL: String?
@@ -145,6 +136,7 @@ struct RepositorySquareElement: Codable {
 enum DefaultBranch: String, Codable {
     case master = "master"
     case the40Square = "4-0-square"
+    case trunk = "trunk"
 }
 
 // MARK: - License
@@ -202,6 +194,7 @@ struct Owner: Codable {
     let eventsURL: EventsURL?
     let receivedEventsURL: String?
     let type: TypeEnum?
+    let userViewType: Visibility?
     let siteAdmin: Bool?
 
     enum CodingKeys: String, CodingKey {
@@ -221,6 +214,7 @@ struct Owner: Codable {
         case eventsURL = "events_url"
         case receivedEventsURL = "received_events_url"
         case type
+        case userViewType = "user_view_type"
         case siteAdmin = "site_admin"
     }
 }
@@ -253,14 +247,14 @@ enum TypeEnum: String, Codable {
     case organization = "Organization"
 }
 
-// MARK: - Permissions
-struct Permissions: Codable {
-    let admin, maintain, push, triage: Bool
-    let pull: Bool
-}
-
 enum Visibility: String, Codable {
     case visibilityPublic = "public"
+}
+
+// MARK: - Permissions
+struct Permissions: Codable {
+    let admin, maintain, push, triage: Bool?
+    let pull: Bool?
 }
 
 typealias RepositorySquare = [RepositorySquareElement]
@@ -270,25 +264,24 @@ typealias RepositorySquare = [RepositorySquareElement]
 class JSONNull: Codable, Hashable {
 
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
+            return true
     }
 
     public var hashValue: Int {
-        return 0
+            return 0
     }
 
     public init() {}
 
     public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
+            let container = try decoder.singleValueContainer()
+            if !container.decodeNil() {
+                    throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
+            }
     }
 
     public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
+            var container = encoder.singleValueContainer()
+            try container.encodeNil()
     }
 }
-

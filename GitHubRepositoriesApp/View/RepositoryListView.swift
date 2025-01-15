@@ -15,18 +15,18 @@ struct RepositoryListView: View {
         VStack {
             Text("Square Repositories")
                 .font(.title)
-                .padding(.bottom, 15)
             Spacer()
             if viewModel.isLoading {
                 ProgressView()
                     .controlSize(.large)
             } else {
                 ScrollView {
-                    VStack(spacing: 20) {
+                    VStack(spacing: 0) {
                         ForEach(viewModel.repoList ?? [], id: \.id) { repo in
-                            RepositoryCardView(fullName: repo.fullName ?? "", 
-                                               description: repo.description ?? "",
-                                               userAvatar: repo.owner?.avatarURL ?? "")
+                            RepositoryCardView(fullName: repo.name ?? "",
+                                               description: repo.description ?? "-",
+                                               watchers: "\(repo.watchers ?? 0)")
+                            Divider()
                         }
                     }
                 }
@@ -35,7 +35,7 @@ struct RepositoryListView: View {
         }
         .padding()
         .task {
-            await viewModel.getRepoList()
+            viewModel.getRepoList()
         }
     }
 }
